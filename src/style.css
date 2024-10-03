@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Muuta vielä taustaväri */
+header {
+  height: 4rem;
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerIcon {
+  height: 90%;
+  margin-left: 1rem;
+  border-radius: 20px;
+}
+
+nav {
+  height: 100%;
+  width: 6rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.loginBtn {
+  background: none;
+  padding: 1rem;
+  border: none;
+  font-size: 2rem;
+  transition: color 0.5s, font-size 0.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.loginBtn:hover {
+  cursor: pointer;
+  color: brown;
+  font-size: 2.5rem;
+}
+
+main {
+  height: calc(100vh - 8rem);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+}
+
+.restaurantList {
+  flex: 1;
+  height: 100%;
+  /* border-right: solid 5px black; */
+  background-color: #e1e3e4;
+  display: flex;
+  flex-direction: column;
+}
+.searchBar {
+  align-self: center;
+  width: 80%;
+  margin: 1rem 0;
+  padding: 0 6px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mapContainer {
+  flex: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 0;
+  text-align: center;
+  background-color: #fcfcfc;
+}
+
+.map {
+  height: 100%;
+  background-color: beige;
+}
+
+footer {
+  height: 4rem;
+  /* joku hieno väri kiitos :) */
+  background-color: black;
+  /* joku hieno väri kiitos :) */
+  color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
