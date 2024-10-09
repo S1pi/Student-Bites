@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Student Bites</title>
-    <!-- <link rel="stylesheet" href="src/style.css" /> -->
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <header>
@@ -29,21 +29,21 @@
     </header>
     <main>
       <div class="restaurantList">
-        <input class="searchBar" type="text" name="" id="" />
-        <ul>
-          <li><p>dawdwa</p></li>
-          <li><p>dawdwa</p></li>
-          <li><p>dawdwa</p></li>
-          <li><p>dawdwa</p></li>
-          <li><p>dawdwa</p></li>
-          <li><p>dawdwa</p></li>
-          <li><p>dawdwa</p></li>
-          <li><p>dawdwa</p></li>
+        <div class="favRes">
+          <h2>Your Favourite Restaurant</h2>
+          <div id="favResBox">Lempi ravintolasi</div>
+          <div id="bottomLine"></div>
+        </div>
+        <ul class="sortOptions">
+          <li><button class="sortBtn">ESPOO</button></li>
+          <li><button class="sortBtn">HELSINKI</button></li>
+          <li><button class="sortBtn">VANTAA</button></li>
         </ul>
       </div>
+      <div class="splitLine"></div>
       <div class="mapContainer">
         <h2>My Beautiful Map</h2>
-        <div class="map"></div>
+        <div id="map" style="width: 100%; height: 100%"></div>
       </div>
       <!-- <h1 style="margin: 0">TÄHÄN SE VITUN KARTTA (tai jotai muuta hienoo)</h1> -->
     </main>

@@ -2,17 +2,33 @@
   box-sizing: border-box;
 }
 
+/* Väripaletti: https://colorhunt.co/palette/eef5ffb4d4ff86b6f6176b87 */
+
+:root {
+  /* Päävärit */
+  --whiteBlue: rgb(238, 245, 255);
+  --darkLightBlue: rgb(134, 182, 246);
+  --lightBlue: rgb(180, 212, 255);
+  --oceanDark: rgb(23, 107, 135);
+  --charcoal: rgb(54, 69, 79);
+
+  /* Vastavärit */
+  --peach: rgb(246, 182, 134);
+  --softOrange: rgb(255, 240, 220);
+  --softGoldenOrange: rgb(246, 182, 134);
+}
+
 body {
   margin: 0;
 }
 
-/* Muuta vielä taustaväri */
 header {
   height: 4rem;
-  background-color: aqua;
+  background-color: var(--darkLightBlue);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--softGoldenOrange);
 }
 
 .headerIcon {
@@ -31,6 +47,7 @@ nav {
 
 .loginBtn {
   background: none;
+  color: var(--softGoldenOrange);
   padding: 1rem;
   border: none;
   font-size: 2rem;
@@ -41,7 +58,7 @@ nav {
 
 .loginBtn:hover {
   cursor: pointer;
-  color: brown;
+  color: var(--charcoal);
   font-size: 2.5rem;
 }
 
@@ -51,22 +68,67 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: black; */
 }
 
 .restaurantList {
   flex: 1;
   height: 100%;
-  /* border-right: solid 5px black; */
-  background-color: #e1e3e4;
+  background-color: var(--whiteBlue);
   display: flex;
   flex-direction: column;
 }
-.searchBar {
-  align-self: center;
+
+.favRes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.favRes > h2 {
+  text-align: center;
+  margin: 10px;
+  flex: 1;
+  /* color: var(--oceanDark); */
+  color: var(--charcoal);
+}
+
+#favResBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  padding: 1rem;
+  border: solid 2px var(--peach);
+  background-color: var(--lightBlue);
+  border-radius: 10px;
+  flex: 2;
+}
+
+#bottomLine {
+  margin-top: 1rem;
   width: 80%;
-  margin: 1rem 0;
-  padding: 0 6px;
+  height: 2px;
+  background: var(--oceanDark);
+}
+
+.sortOptions {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+  flex: 5;
+}
+
+.sortBtn {
+  width: 80%;
+  height: 2rem;
+  background-color: var(--lightBlue);
+  color: var(--charcoal);
+  border-radius: 45px;
+  border: none;
 }
 
 ul {
@@ -75,28 +137,37 @@ ul {
   text-align: center;
 }
 
+.splitLine {
+  background: var(--oceanDark);
+  width: 3px;
+  height: 100%;
+}
+
 .mapContainer {
-  flex: 3;
+  flex: 4;
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   padding-top: 0;
   text-align: center;
-  background-color: #fcfcfc;
+  background-color: var(--whiteBlue);
+  color: var(--charcoal);
 }
 
 .map {
   height: 100%;
-  background-color: beige;
+  /* background-color: beige; */
+  border: solid 2px var(--softOrange);
+  border-radius: 16px;
 }
 
 footer {
   height: 4rem;
   /* joku hieno väri kiitos :) */
-  background-color: black;
+  background-color: var(--charcoal);
   /* joku hieno väri kiitos :) */
-  color: antiquewhite;
+  color: var(--peach);
   display: flex;
   align-items: center;
   justify-content: center;
