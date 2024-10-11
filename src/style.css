@@ -20,6 +20,12 @@
 
 body {
   margin: 0;
+  background-color: var(--whiteBlue);
+}
+
+body.dark-mode {
+  background-color: black;
+  color: #2196f3;
 }
 
 header {
@@ -31,13 +37,58 @@ header {
   color: var(--softGoldenOrange);
 }
 
+.iconAndDarkContainer {
+  height: 100%;
+  display: flex;
+  margin-left: 1rem;
+}
+
+.darkMode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#darkModeTog {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggleSwitch {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  background-color: aqua;
+  width: 64px;
+  height: 32px;
+  padding: 5px;
+  border-radius: 45px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggleSwitch .sliderBall {
+  background-color: aliceblue;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 4px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+#darkModeTog:checked + .toggleSwitch .sliderBall {
+  transform: translateX(32px);
+}
+
 .headerIcon {
   height: 90%;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   border-radius: 20px;
 }
 
-nav {
+.nav {
   height: 100%;
   width: 6rem;
   display: flex;
@@ -76,6 +127,8 @@ main {
   background-color: var(--whiteBlue);
   display: flex;
   flex-direction: column;
+  min-width: 300px;
+  max-width: 360px;
 }
 
 .favRes {
@@ -90,15 +143,17 @@ main {
   text-align: center;
   margin: 10px;
   flex: 1;
-  /* color: var(--oceanDark); */
   color: var(--charcoal);
 }
 
 #favResBox {
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: larger;
+  font-weight: bolder;
   padding: 1rem;
   border: solid 2px var(--peach);
   background-color: var(--lightBlue);
@@ -127,6 +182,7 @@ main {
   height: 2rem;
   background-color: var(--lightBlue);
   color: var(--charcoal);
+  font-weight: bold;
   border-radius: 45px;
   border: none;
 }
@@ -171,4 +227,95 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  .splitLine {
+    display: none;
+  }
+
+  .restaurantList {
+    width: 100%;
+    max-width: none;
+    flex: 1;
+  }
+
+  .mapContainer {
+    flex: 5;
+  }
+
+  /* .favRes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.favRes > h2 {
+  text-align: center;
+  margin: 10px;
+  flex: 1;
+  color: var(--charcoal);
+}
+
+#favResBox {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+  padding: 1rem;
+  border: solid 2px var(--peach);
+  background-color: var(--lightBlue);
+  border-radius: 10px;
+  flex: 2;
+} */
+
+  .sortOptionsLines {
+    position: relative;
+    width: 90%;
+    height: 1px;
+    transform: scaleY(2);
+    align-self: center;
+    background-color: var(--oceanDark);
+  }
+
+  .favRes {
+    flex-direction: row;
+    align-self: center;
+    padding: 10px 0;
+    width: 80%;
+  }
+
+  .favRes > h2 {
+    font-size: 22px;
+    flex: 3;
+  }
+
+  #bottomLine {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sortOptions {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sortBtn {
+    width: 10vw;
+    min-width: 84px;
+  }
+
+  .mapContainer {
+    width: 100%;
+  }
 }

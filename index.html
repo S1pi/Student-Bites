@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./src/main.ts"></script>
+    <script type="module" src="./darkmode.ts"></script>
     <script
       src="https://kit.fontawesome.com/73dc3c0bf3.js"
       crossorigin="anonymous"
@@ -14,11 +15,21 @@
   </head>
   <body>
     <header>
-      <img
-        class="headerIcon"
-        src="./src/images/student-restaurant-logo.png"
-        alt="student-restaurant-logo"
-      />
+      <div class="iconAndDarkContainer">
+        <img
+          class="headerIcon"
+          src="./src/images/student-restaurant-logo.png"
+          alt="student-restaurant-logo"
+        />
+        <div class="darkMode">
+          <input type="checkbox" id="darkModeTog" />
+          <label for="darkModeTog" class="toggleSwitch">
+            <i id="moon" class="fas fa-moon"></i>
+            <i id="sun" class="fa-solid fa-sun"></i>
+            <span class="sliderBall"></span>
+          </label>
+        </div>
+      </div>
       <div class="headerText">
         <h1>Student Bites</h1>
       </div>
@@ -31,15 +42,17 @@
     <main>
       <div class="restaurantList">
         <div class="favRes">
-          <h2>Your Favourite Restaurant</h2>
+          <h2>Your Favourite Restaurant:</h2>
           <div id="favResBox">Lempi ravintolasi</div>
           <div id="bottomLine"></div>
         </div>
+        <div class="sortOptionsLines"></div>
         <ul class="sortOptions">
           <li><button class="sortBtn">ESPOO</button></li>
           <li><button class="sortBtn">HELSINKI</button></li>
           <li><button class="sortBtn">VANTAA</button></li>
         </ul>
+        <div class="sortOptionsLines"></div>
       </div>
       <div class="splitLine"></div>
       <div class="mapContainer">
