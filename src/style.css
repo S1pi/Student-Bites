@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Inter";
+  src: url(/assets/fonts/Inter-VariableFont_opsz\,wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -22,6 +29,7 @@
 body {
   margin: 0;
   background-color: var(--whiteBlue);
+  font-family: "Inter", sans-serif;
 }
 
 .dark-theme {
@@ -277,36 +285,6 @@ footer {
     flex: 5;
   }
 
-  /* .favRes {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-}
-
-.favRes > h2 {
-  text-align: center;
-  margin: 10px;
-  flex: 1;
-  color: var(--charcoal);
-}
-
-#favResBox {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: larger;
-  font-weight: bolder;
-  padding: 1rem;
-  border: solid 2px var(--peach);
-  background-color: var(--lightBlue);
-  border-radius: 10px;
-  flex: 2;
-} */
-
   .sortOptionsLines {
     position: relative;
     width: 90%;
@@ -347,5 +325,41 @@ footer {
 
   .mapContainer {
     width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  header .headerText {
+    font-size: smaller;
+  }
+
+  .darkMode {
+    margin-left: 3px;
+  }
+
+  .toggleSwitch {
+    width: 59px;
+    height: 27px;
+  }
+
+  .toggleSwitch .sliderBall {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media (max-width: 365px) {
+  header .headerText {
+    font-size: 12px;
+  }
+
+  .toggleSwitch {
+    width: 54px;
+    height: 22px;
+  }
+
+  .toggleSwitch .sliderBall {
+    width: 16px;
+    height: 16px;
   }
 }
