@@ -11,6 +11,7 @@
   --lightBlue: rgb(180, 212, 255);
   --oceanDark: rgb(23, 107, 135);
   --charcoal: rgb(54, 69, 79);
+  --footer: rgb(70, 100, 150);
 
   /* Vastavärit */
   --peach: rgb(246, 182, 134);
@@ -23,9 +24,37 @@ body {
   background-color: var(--whiteBlue);
 }
 
-body.dark-mode {
+.dark-theme {
+  /* Päävärit */
+  --whiteBlue: rgb(30, 30, 30); /* Tumma tausta */
+  --darkLightBlue: rgb(70, 70, 70); /* Tumma vaalean sininen */
+  --lightBlue: rgb(50, 50, 50); /* Tumma sininen */
+  --charcoal: rgb(200, 200, 200); /* Vaaleampi tummanharmaa */
+  --footer: rgb(50, 50, 50);
+  /* --charcoal: rgb(34, 34, 34); */
+
+  /* Vastavärit */
+  --peach: rgb(
+    246,
+    182,
+    134
+  ); /* Voit pitää tämän alkuperäisenä, tai muuttaa sen esimerkiksi vaaleammaksi */
+  --softOrange: rgb(200, 120, 90); /* Vaaleampi pehmeä oranssi */
+  --softGoldenOrange: rgb(200, 160, 90); /* Vaaleampi kultainen oranssi */
+}
+/* body.dark-mode {
   background-color: black;
   color: #2196f3;
+} */
+
+.dark-mode-whiteBlue {
+  background-color: black !important;
+  color: #2196f3;
+}
+
+.dark-mode-darkLight {
+  background-color: brown;
+  color: aqua;
 }
 
 header {
@@ -59,7 +88,7 @@ header {
   position: relative;
   display: flex;
   cursor: pointer;
-  background-color: aqua;
+  background-color: var(--charcoal);
   width: 64px;
   height: 32px;
   padding: 5px;
@@ -69,7 +98,7 @@ header {
 }
 
 .toggleSwitch .sliderBall {
-  background-color: aliceblue;
+  background-color: var(--softGoldenOrange);
   width: 26px;
   height: 26px;
   position: absolute;
@@ -148,6 +177,7 @@ main {
 
 #favResBox {
   width: 80%;
+  color: var(--charcoal);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -221,7 +251,7 @@ ul {
 footer {
   height: 4rem;
   /* joku hieno väri kiitos :) */
-  background-color: var(--charcoal);
+  background-color: var(--footer);
   /* joku hieno väri kiitos :) */
   color: var(--peach);
   display: flex;
