@@ -1,16 +1,25 @@
 import "./components/map";
 import { fetchData } from "./components/fetchdata";
 import { Restaurant } from "./interfaces/Restaurant";
+import { createMarker } from "./components/map";
+import { restaurantInfo } from "./components/restaurantModal";
 
-const apiUrl = "https://media1.edu.metropolia.fi/restaurant/api/v1";
-
-const loadRestaurants = async (): Promise<void> => {
+const fetchRestaurants = async (): Promise<Restaurant[]> => {
   try {
-    const restaurants: Restaurant[] = await fetchData(apiUrl + "/restaurants");
-    console.log(restaurants);
+    const restaurants: Restaurant[] = await fetchData("/restaurants");
+    return restaurants;
   } catch (err) {
     throw new Error(`Error fetching restaurants: + ${err}`);
   }
 };
 
-loadRestaurants();
+const createRestaurantMarkers = async (): Promise<void> => {
+  const restaurants = await fetchRestaurants();
+  console.log(restaurants);
+  restaurants.map(async (restaurant) => {
+    const coords = restaurant.location.coordinates;
+    createMarker(coords[1], coords[0], await restaurantInfo(restaurant));
+  });
+};
+
+createRestaurantMarkers();
