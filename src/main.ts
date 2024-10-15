@@ -2,7 +2,7 @@ import "./components/map";
 import { fetchData } from "./components/fetchdata";
 import { Restaurant } from "./interfaces/Restaurant";
 import { createMarker } from "./components/map";
-import { restaurantInfo } from "./components/restaurantModal";
+import { restaurantInfo } from "./components/restaurantInfo";
 
 const fetchRestaurants = async (): Promise<Restaurant[]> => {
   try {
