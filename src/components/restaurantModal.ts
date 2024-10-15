@@ -95,28 +95,34 @@ const weeklyMenu = async (restaurantId: string): Promise<void> => {
       foodContainer.id = "weeklyFoodData";
 
       console.log(weeklyMenu.days);
-      weeklyMenu.days.map((day) => {
-        const date = document.createElement("h2");
-        const dateFoodContainer = document.createElement("div");
-        dateFoodContainer.classList.add("modalFoodData");
-        day.courses.map((data) => {
-          const foodName = document.createElement("h3");
-          foodName.textContent = data.name;
-          const diets = document.createElement("p");
-          diets.textContent = data.diets;
-          const price = document.createElement("p");
-          price.textContent = data.price;
+      if (!(weeklyMenu.days.length === 0)) {
+        weeklyMenu.days.map((day) => {
+          const date = document.createElement("h2");
+          const dateFoodContainer = document.createElement("div");
+          dateFoodContainer.classList.add("modalFoodData");
+          day.courses.map((data) => {
+            const foodName = document.createElement("h3");
+            foodName.textContent = data.name;
+            const diets = document.createElement("p");
+            diets.textContent = data.diets;
+            const price = document.createElement("p");
+            price.textContent = data.price;
 
-          dateFoodContainer.append(foodName, diets, price);
+            dateFoodContainer.append(foodName, diets, price);
+          });
+
+          console.log(day);
+          date.textContent = day.date;
+          foodContainer.append(date, dateFoodContainer);
+          if (menuContainer) {
+            menuContainer.appendChild(foodContainer);
+          }
         });
-
-        console.log(day);
-        date.textContent = day.date;
-        foodContainer.append(date, dateFoodContainer);
-        if (menuContainer) {
-          menuContainer.appendChild(foodContainer);
-        }
-      });
+      } else {
+        const noMenu = document.createElement("h4");
+        noMenu.textContent = "Ei menua saatavilla";
+        menuContainer.appendChild(noMenu);
+      }
     }
     modal.showModal();
   }

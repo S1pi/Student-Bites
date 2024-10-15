@@ -27,8 +27,8 @@ const restaurantInfo = async (
 
   h3.textContent = `${restaurant.name} - ${restaurant.company}`;
   p.innerHTML = `<b>${restaurant.address}</b> <br> ${restaurant.postalCode} ${restaurant.city}`;
-  todayMenuBtn.textContent = "Today's Menu";
-  weeklyMenuBtn.textContent = "Week's Menu";
+  todayMenuBtn.textContent = "Päivän menu";
+  weeklyMenuBtn.textContent = "Viikon menu";
   div.append(h3, p, btnContainer);
 
   return div;
