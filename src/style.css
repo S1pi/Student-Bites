@@ -65,6 +65,19 @@ body {
   color: aqua;
 }
 
+/* Modaalit */
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+}
+#registerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modaalit */
+
 header {
   height: 4rem;
   background-color: var(--darkLightBlue);
