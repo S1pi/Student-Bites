@@ -1,16 +1,16 @@
 import * as L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Markkerien kuvapolut
-const iconUrl = "./leaflet/marker-icon.png";
-const iconRetinaUrl = "./leaflet/marker-icon-2x.png";
-const shadowUrl = "./leaflet/marker-shadow.png";
+// Markkerien kuvapolut buildiin!!!
+// const iconUrl = "./leaflet/marker-icon.png";
+// const iconRetinaUrl = "./leaflet/marker-icon-2x.png";
+// const shadowUrl = "./leaflet/marker-shadow.png";
 
-L.Icon.Default.mergeOptions({
-  iconUrl,
-  iconRetinaUrl,
-  shadowUrl,
-});
+// L.Icon.Default.mergeOptions({
+//   iconUrl,
+//   iconRetinaUrl,
+//   shadowUrl,
+// });
 
 const mapElement = document.getElementById("map") as HTMLElement;
 export let markers: L.Marker[] = [];
