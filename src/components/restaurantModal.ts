@@ -1,5 +1,5 @@
 import { fetchData } from "./fetchdata";
-import { WeeklyMenu, DailyMenu } from "../interfaces/menus";
+import { WeeklyMenu, DailyMenu } from "../interfaces/Menus";
 
 const closeModal = document.querySelectorAll(".modalCloseBtn");
 const dailyModal = document.getElementById(

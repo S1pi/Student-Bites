@@ -146,7 +146,7 @@ header {
   align-items: center;
 }
 
-.loginBtn {
+.profileBtn {
   background: none;
   color: var(--softGoldenOrange);
   padding: 1rem;
@@ -157,7 +157,7 @@ header {
   justify-content: center;
 }
 
-.loginBtn:hover {
+.profileBtn:hover {
   cursor: pointer;
   color: var(--charcoal);
   font-size: 2.5rem;

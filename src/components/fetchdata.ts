@@ -6,9 +6,17 @@ const fetchData = async <T>(
 ): Promise<T> => {
   const response = await fetch(apiUrl + url, options);
   if (!response.ok) {
+    if (response.statusText === "Unauthorized") {
+      return {
+        status: response.status,
+        errorText: response.statusText,
+        message: "Kirjautuminen epäonnistui: Väärä salasana tai käyttäjätunnus",
+      } as T;
+    }
     throw new Error(`Error ${response.status} occured`);
   }
-  return response.json();
-};
 
+  console.log(response);
+  return await response.json();
+};
 export { fetchData };

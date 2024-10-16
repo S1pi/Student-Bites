@@ -34,25 +34,35 @@
         <h1>Student Bites</h1>
       </div>
       <nav>
-        <button class="loginBtn">
+        <button class="profileBtn">
           <i class="fa-solid fa-id-card"></i>
         </button>
       </nav>
     </header>
     <main>
+      <!-- Profile modal -->
+      <dialog id="profileModal">
+        <h2 id="profiili">Profiilisi</h2>
+        <div id="profileContainer">
+          <p id="profileUname"></p>
+          <p id="profileEmail"></p>
+          <p id="favouriteRestaurant"></p>
+        </div>
+      </dialog>
+
       <!-- Login modal -->
       <dialog id="loginModal">
         <button class="loginCloseBtn">X</button>
         <div>
           <h2>Kirjautuminen</h2>
-          <form action="" id="loginForm">
+          <form id="loginForm">
             <label for="loginUname">Username:</label>
             <input type="text" id="loginUname" />
             <label for="loginUname">Password:</label>
             <input type="password" id="loginPword" />
           </form>
         </div>
-        <button class="logInside">Kirjaudu Sisään</button>
+        <button class="loginBtn">Kirjaudu Sisään</button>
         <button class="registerBtn">Rekisteröidy</button>
       </dialog>
 
@@ -69,6 +79,7 @@
             <input type="email" id="regEmail" />
           </form>
         </div>
+        <button class="registerBtn">Rekisteröidy</button>
       </dialog>
       <!-- Menu modalit -->
       <dialog id="dailyMenu">
