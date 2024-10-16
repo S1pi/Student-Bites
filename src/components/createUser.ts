@@ -5,7 +5,7 @@ const createUser = async (
   username: string,
   password: string,
   email: string
-): Promise<CreateUser> => {
+): Promise<CreateUser | { created: false; message: string }> => {
   const data = { username, password, email };
   const options: RequestInit = {
     method: "POST",
@@ -15,17 +15,20 @@ const createUser = async (
     body: JSON.stringify(data),
   };
 
-  const result: CreateUser = await fetchData("/users", options);
-  return result;
+  if (await checkUsername(username)) {
+    const result: CreateUser = await fetchData("/users", options);
+    return { ...result, created: true };
+  } else {
+    return { created: false, message: "Käyttäjänimi Varattu" };
+  }
 };
 
 // muuta promisen voidi oikeeksi tyypiksi ja palauta funktio createUseriin
-const checkUsername = async (username: string): Promise<void> => {
-  const result = await fetchData("/users/available/" + username);
-  console.log("Täs ollaan");
-
-  // Tää toimii hetiku tyyppi toteutetaan
-  // console.log(result.available);
+const checkUsername = async (username: string): Promise<boolean> => {
+  const result: { available: boolean } = await fetchData(
+    "/users/available/" + username
+  );
+  return result.available;
 };
 
 export { createUser, checkUsername };

@@ -76,6 +76,124 @@ body {
   flex-direction: column;
 }
 
+.restaurantModal {
+  background: var(--whiteBlue);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--charcoal);
+}
+
+.restaurantModal h3 {
+  margin: 0;
+  padding: 10px;
+}
+
+.restaurantModal p {
+  margin-top: 0;
+}
+
+.menuBtnContainer {
+  display: flex;
+  height: 2rem;
+  gap: 10px;
+}
+
+.modalBtn {
+  border-radius: 10px;
+  background: var(--lightBlue);
+  color: var(--charcoal);
+  border: none;
+}
+
+/* .leaflet-popup-content {
+  margin: 0;
+} */
+
+.leaflet-popup-content-wrapper {
+  display: flex;
+  background: var(--darkLightBlue) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--darkLightBlue) !important;
+}
+
+#dailyMenu {
+  background-color: var(--lightBlue);
+  border-radius: 30px;
+  scrollbar-width: none;
+  color: var(--charcoal);
+}
+
+#dailyH3 {
+  background-color: var(--darkLightBlue);
+  height: 3rem;
+  line-height: 2.5;
+  text-align: center;
+}
+
+#weeklyMenu {
+  background-color: var(--lightBlue);
+  border-radius: 30px;
+  scrollbar-width: none;
+  color: var(--charcoal);
+}
+
+.menuContainer {
+  /* display: flex; */
+  flex-direction: column;
+}
+
+.menuContainer h2 {
+  background-color: var(--darkLightBlue);
+  height: 3rem;
+  text-align: center;
+  line-height: 2;
+}
+
+#loginModal {
+  background-color: var(--lightBlue);
+  border-color: var(--oceanDark);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  color: var(--charcoal);
+}
+
+#loginBtnContainer {
+  margin-top: 1rem;
+}
+
+#loginBtnContainer button {
+  background-color: var(--darkLightBlue);
+  color: var(--charcoal);
+  /* border: solid 1px var(--peach); */
+}
+
+.loginCloseBtn {
+  width: 2rem;
+  border-radius: 6px;
+}
+
+#registerModal {
+  background-color: var(--lightBlue);
+  border-color: var(--oceanDark);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  color: var(--charcoal);
+}
+
+.registerBtnSubmit {
+  margin-top: 10px;
+  background-color: var(--darkLightBlue);
+  color: var(--charcoal);
+}
+
 /* Modaalit */
 
 header {

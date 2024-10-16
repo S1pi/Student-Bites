@@ -12,6 +12,11 @@ const fetchData = async <T>(
         errorText: response.statusText,
         message: "Kirjautuminen epäonnistui: Väärä salasana tai käyttäjätunnus",
       } as T;
+    } else if (response.status === 400) {
+      alert(`Error: ${response.status}, ${response.statusText}
+        Sähköposti on todennäköisesti käytössä tai salasana on alle 5 merkkiä`);
+    } else if (response.status === 404) {
+      alert("Error: " + response.status + `: ${response.statusText}`);
     }
     throw new Error(`Error ${response.status} occured`);
   }

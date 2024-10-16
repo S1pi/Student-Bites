@@ -1,7 +1,7 @@
 import { fetchData } from "./fetchdata";
 import { Login, LoginError } from "../interfaces/User";
 import { getCurrentUser } from "./getCurrentUser";
-import { checkUsername } from "./createUser";
+import { createUser } from "./createUser";
 
 const profileBtn = document.querySelector(".profileBtn") as HTMLButtonElement;
 const loginModal = document.getElementById("loginModal") as HTMLDialogElement;
@@ -13,6 +13,11 @@ const registerBtn = document.querySelector(".registerBtn") as HTMLButtonElement;
 const registerSubmit = document.querySelector(
   ".registerBtnSubmit"
 ) as HTMLButtonElement;
+
+const regUname = document.querySelector("#regUname") as HTMLInputElement;
+const regPword = document.querySelector("#regPword") as HTMLInputElement;
+const regEmail = document.querySelector("#regEmail") as HTMLInputElement;
+
 const logOutBtn = document.querySelector(".profileLogOut") as HTMLButtonElement;
 const profile = document.querySelector("#profileModal") as HTMLDialogElement;
 
@@ -68,9 +73,22 @@ registerBtn.addEventListener("click", () => {
   registerModal.showModal();
 });
 
-registerSubmit.addEventListener("click", () => {
-  checkUsername("sipi");
-  registerModal.close();
+registerSubmit.addEventListener("click", async () => {
+  // Tässä kutsutaan käyttäjän rekisteröintiä'
+  const uName = regUname.value;
+  const pword = regPword.value;
+  const email = regEmail.value;
+
+  const result = await createUser(uName, pword, email);
+
+  console.log(result);
+  if (result.created) {
+    alert(result.message);
+    registerModal.close();
+    loginModal.showModal();
+  } else {
+    alert(result.message);
+  }
 });
 
 logInBtn.addEventListener("click", async () => {

@@ -104,9 +104,11 @@ const weeklyMenu = async (restaurantId: string): Promise<void> => {
             const foodName = document.createElement("h3");
             foodName.textContent = data.name;
             const diets = document.createElement("p");
-            diets.textContent = data.diets;
+            diets.textContent = "Allergeenit: " + data.diets;
             const price = document.createElement("p");
-            price.textContent = data.price;
+            price.textContent = data.price
+              ? "Hinta: " + data.price
+              : "Hinta: Ei saatavilla";
 
             dateFoodContainer.append(foodName, diets, price);
           });
