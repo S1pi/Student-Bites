@@ -1,6 +1,7 @@
 import { fetchData } from "./fetchdata";
-import { Login, LoginError, User } from "../interfaces/User";
+import { Login, LoginError } from "../interfaces/User";
 import { getCurrentUser } from "./getCurrentUser";
+import { checkUsername } from "./createUser";
 
 const profileBtn = document.querySelector(".profileBtn") as HTMLButtonElement;
 const loginModal = document.getElementById("loginModal") as HTMLDialogElement;
@@ -9,6 +10,10 @@ const registerModal = document.getElementById(
 ) as HTMLDialogElement;
 const logInBtn = document.querySelector(".loginBtn") as HTMLButtonElement;
 const registerBtn = document.querySelector(".registerBtn") as HTMLButtonElement;
+const registerSubmit = document.querySelector(
+  ".registerBtnSubmit"
+) as HTMLButtonElement;
+const logOutBtn = document.querySelector(".profileLogOut") as HTMLButtonElement;
 const profile = document.querySelector("#profileModal") as HTMLDialogElement;
 
 const loginUname = document.querySelector("#loginUname") as HTMLInputElement;
@@ -38,8 +43,15 @@ const profileModal = async (token: string): Promise<void> => {
   }
 };
 
+logOutBtn.addEventListener("click", () => {
+  // const token = localStorage.getItem("token")
+  localStorage.removeItem("token");
+  profile.close();
+});
+
 profileBtn.addEventListener("click", () => {
   const token = localStorage.getItem("token");
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   token ? profileModal(token) : loginModal.showModal();
 });
 
@@ -47,12 +59,18 @@ close.forEach((btn) => {
   btn.addEventListener("click", () => {
     loginModal.close();
     registerModal.close();
+    profile.close();
   });
 });
 
 registerBtn.addEventListener("click", () => {
   loginModal.close();
   registerModal.showModal();
+});
+
+registerSubmit.addEventListener("click", () => {
+  checkUsername("sipi");
+  registerModal.close();
 });
 
 logInBtn.addEventListener("click", async () => {
@@ -63,7 +81,7 @@ logInBtn.addEventListener("click", async () => {
     const data = await loginFunc(username, password);
     if ("errorText" in data) {
       console.log(data.message);
-      alert(`${data.status}: ${data.errorText} 
+      alert(`${data.status}: ${data.errorText}
         ${data.message}`);
     } else {
       localStorage.setItem("token", data.token);

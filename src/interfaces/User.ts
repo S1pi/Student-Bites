@@ -22,6 +22,7 @@ type LoginError = {
 type CreateUser = {
   message: string;
   data: Omit<User, "avatar"> & { activated: string };
+  activationUrl: string;
 };
 
 export type { User, Login, CreateUser, LoginError };

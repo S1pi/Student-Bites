@@ -42,12 +42,14 @@
     <main>
       <!-- Profile modal -->
       <dialog id="profileModal">
+        <button class="loginCloseBtn">X</button>
         <h2 id="profiili">Profiilisi</h2>
         <div id="profileContainer">
           <p id="profileUname"></p>
           <p id="profileEmail"></p>
           <p id="favouriteRestaurant"></p>
         </div>
+        <button class="profileLogOut">Kirjaudu Ulos</button>
       </dialog>
 
       <!-- Login modal -->
@@ -65,7 +67,7 @@
         <button class="loginBtn">Kirjaudu Sisään</button>
         <button class="registerBtn">Rekisteröidy</button>
       </dialog>
-
+      <!-- Register modal -->
       <dialog id="registerModal">
         <button class="loginCloseBtn">X</button>
         <div>
@@ -79,7 +81,7 @@
             <input type="email" id="regEmail" />
           </form>
         </div>
-        <button class="registerBtn">Rekisteröidy</button>
+        <button class="registerBtnSubmit">Rekisteröidy</button>
       </dialog>
       <!-- Menu modalit -->
       <dialog id="dailyMenu">
